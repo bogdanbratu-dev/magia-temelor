@@ -25,6 +25,7 @@ export function Program({
             eyebrow="Cum funcționează"
             title={program.title}
             description={program.description}
+            variant="dark"
           />
         </Reveal>
 
