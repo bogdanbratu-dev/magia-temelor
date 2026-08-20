@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import Link from "next/link";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { sendContactMessage, type ContactState } from "@/app/actions/contact";
 
@@ -54,6 +55,14 @@ export function ContactForm() {
           className="resize-none rounded-xl border border-navy-950/10 bg-white px-4 py-2.5 text-sm text-navy-950 outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-200"
         />
       </label>
+
+      <p className="text-xs text-navy-900/50">
+        Prin trimiterea formularului ești de acord cu{" "}
+        <Link href="/confidentialitate" className="underline hover:text-navy-900">
+          politica de confidențialitate
+        </Link>
+        .
+      </p>
 
       <button
         type="submit"

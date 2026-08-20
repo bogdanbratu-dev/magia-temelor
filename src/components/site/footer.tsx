@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
 import type { BrandContent, ContactContent, FooterContent } from "@/lib/types";
@@ -95,9 +96,19 @@ export function Footer({
       </div>
 
       <div className="border-t border-white/10 py-5">
-        <p className="text-center text-xs text-cream-100/60 px-5">
-          © {year} {footer.text}
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-5 text-center sm:flex-row sm:justify-between">
+          <p className="text-xs text-cream-100/60">
+            © {year} {footer.text}
+          </p>
+          <div className="flex items-center gap-4 text-xs text-cream-100/60">
+            <Link href="/termeni-si-conditii" className="hover:text-white">
+              Termeni și condiții
+            </Link>
+            <Link href="/confidentialitate" className="hover:text-white">
+              Confidențialitate
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
