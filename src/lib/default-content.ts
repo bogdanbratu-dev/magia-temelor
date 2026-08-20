@@ -153,7 +153,13 @@ export const DEFAULT_CONTENT: SiteContent = {
   gallery: {
     title: "Galerie foto",
     description: "O privire în universul Magia Temelor.",
-    images: [],
+    images: [
+      {
+        id: "g1",
+        url: "/images/promo-flyer.jpg",
+        caption: "Înscrieri deschise pentru anul școlar și școala de vară",
+      },
+    ],
   },
   testimonials: {
     title: "Ce spun părinții",
