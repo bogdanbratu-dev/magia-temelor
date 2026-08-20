@@ -24,7 +24,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     ctaPrimaryLink: "#contact",
     ctaSecondaryText: "Vezi programul și prețurile",
     ctaSecondaryLink: "#program",
-    imageUrl: "/images/logo.jpg",
+    imageUrl: "/images/hero-banner.jpg",
     stats: [
       { value: "6-11 ani", label: "Clasele 0 - IV" },
       { value: "11:30-18:30", label: "Luni - Vineri" },
@@ -156,8 +156,38 @@ export const DEFAULT_CONTENT: SiteContent = {
     images: [
       {
         id: "g1",
-        url: "/images/promo-flyer.jpg",
-        caption: "Înscrieri deschise pentru anul școlar și școala de vară",
+        url: "/images/gallery/gallery-1.jpg",
+        caption: "Atelier tematic — ciclul de viață al plantelor",
+      },
+      {
+        id: "g2",
+        url: "/images/gallery/gallery-2.jpg",
+        caption: "Pictură și creativitate",
+      },
+      {
+        id: "g3",
+        url: "/images/gallery/gallery-3.jpg",
+        caption: "Lectură și povești",
+      },
+      {
+        id: "g4",
+        url: "/images/gallery/gallery-4.jpg",
+        caption: "Mândri de lucrările lor",
+      },
+      {
+        id: "g5",
+        url: "/images/gallery/gallery-5.jpg",
+        caption: "Jocuri și activități de grup",
+      },
+      {
+        id: "g6",
+        url: "/images/gallery/gallery-6.jpg",
+        caption: "Club de lectură",
+      },
+      {
+        id: "g7",
+        url: "/images/gallery/gallery-7.jpg",
+        caption: "Atelier creativ — ceasul timpului",
       },
     ],
   },
