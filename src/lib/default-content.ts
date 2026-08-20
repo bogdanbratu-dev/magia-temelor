@@ -2,7 +2,7 @@ import type { SiteContent } from "./types";
 
 export const DEFAULT_CONTENT: SiteContent = {
   seo: {
-    title: "Magia Temelor — Afterschool pentru copii și părinți fericiți | Sector 3, București",
+    title: "Magia Temelor: Afterschool pentru copii și părinți fericiți | Sector 3, București",
     description:
       "Afterschool Magia Temelor din Sector 3, București: sprijin la teme, supraveghere după programul școlar, activități educative (limbi străine, șah, robotică, pian) pentru copii clasele 0-IV. Înscrieri pe tot parcursul anului.",
     keywords:
@@ -19,7 +19,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     headline: "Un loc unde temele devin",
     highlightWord: "magie",
     subheadline:
-      "La Magia Temelor, copilul tău primește sprijin real la teme, activități educative captivante și multă căldură — într-un spațiu liniștit, aproape de școală, unde vine cu drag în fiecare zi.",
+      "La Magia Temelor, copilul tău primește sprijin real la teme, activități educative captivante și multă căldură, într-un spațiu liniștit, aproape de școală, unde vine cu drag în fiecare zi.",
     ctaPrimaryText: "Programează o vizită",
     ctaPrimaryLink: "#contact",
     ctaSecondaryText: "Vezi programul și prețurile",
@@ -157,7 +157,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       {
         id: "g1",
         url: "/images/gallery/gallery-1.jpg",
-        caption: "Atelier tematic — ciclul de viață al plantelor",
+        caption: "Atelier tematic: ciclul de viață al plantelor",
       },
       {
         id: "g2",
@@ -187,7 +187,7 @@ export const DEFAULT_CONTENT: SiteContent = {
       {
         id: "g7",
         url: "/images/gallery/gallery-7.jpg",
-        caption: "Atelier creativ — ceasul timpului",
+        caption: "Atelier creativ: ceasul timpului",
       },
     ],
   },
