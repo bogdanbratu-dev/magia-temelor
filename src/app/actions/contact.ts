@@ -50,7 +50,7 @@ export async function sendContactMessage(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Magia Temelor <site@resend.dev>",
+        from: "Magia Temelor <contact@magiatemelor.ro>",
         to: [toEmail],
         reply_to: email || undefined,
         subject: `Mesaj nou de pe site de la ${name}`,
