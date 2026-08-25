@@ -100,6 +100,7 @@ export interface Testimonial {
 export interface TestimonialsContent {
   title: string;
   description: string;
+  googleReviewUrl: string;
   items: Testimonial[];
 }
 

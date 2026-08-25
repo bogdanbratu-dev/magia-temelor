@@ -1,4 +1,4 @@
-import { Star, MessageCircleHeart } from "lucide-react";
+import { Star, MessageCircleHeart, ExternalLink } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import type { TestimonialsContent } from "@/lib/types";
@@ -14,6 +14,23 @@ export function Testimonials({ testimonials }: { testimonials: TestimonialsConte
             description={testimonials.description}
           />
         </Reveal>
+
+        {testimonials.googleReviewUrl ? (
+          <Reveal>
+            <div className="mt-6 flex justify-center">
+              <a
+                href={testimonials.googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-navy-950 px-5 py-3 text-sm font-medium text-cream-50 shadow-[var(--shadow-card)] transition hover:bg-navy-900"
+              >
+                <Star className="h-4 w-4 fill-gold-500 text-gold-500" />
+                Lasă-ne un review pe Google
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+          </Reveal>
+        ) : null}
 
         {testimonials.items.length === 0 ? (
           <div className="mt-10 rounded-3xl bg-cream-50 ring-1 ring-navy-950/5 p-10 sm:p-16 flex flex-col items-center gap-3 text-center">

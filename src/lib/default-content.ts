@@ -89,7 +89,7 @@ export const DEFAULT_CONTENT: SiteContent = {
           "Preluare de la școală (11:30)",
           "Masă de prânz și gustare",
           "Sprijin la teme",
-          "Program până la 18:30",
+          "Program până la 16:00",
         ],
       },
       {
@@ -100,7 +100,7 @@ export const DEFAULT_CONTENT: SiteContent = {
         highlighted: true,
         features: [
           "Tot ce include programul standard",
-          "O activitate opțională inclusă",
+          "Program până la 18:30",
           "Monitorizare progres școlar",
           "Comunicare constantă cu părinții",
         ],
@@ -157,12 +157,12 @@ export const DEFAULT_CONTENT: SiteContent = {
       {
         id: "g1",
         url: "/images/gallery/gallery-1.jpg",
-        caption: "Atelier tematic: ciclul de viață al plantelor",
+        caption: "Atelier tematic: circuitul apei în natură",
       },
       {
         id: "g2",
         url: "/images/gallery/gallery-2.jpg",
-        caption: "Pictură și creativitate",
+        caption: "Pașaport pentru Uniunea Europeană, atelier de geografie",
       },
       {
         id: "g3",
@@ -172,29 +172,149 @@ export const DEFAULT_CONTENT: SiteContent = {
       {
         id: "g4",
         url: "/images/gallery/gallery-4.jpg",
-        caption: "Mândri de lucrările lor",
+        caption: "Activități practice, prietenii cresc împreună",
       },
       {
         id: "g5",
         url: "/images/gallery/gallery-5.jpg",
-        caption: "Jocuri și activități de grup",
+        caption: "Robotică și tehnologie",
       },
       {
         id: "g6",
         url: "/images/gallery/gallery-6.jpg",
-        caption: "Club de lectură",
+        caption: "Ateliere creative în echipă",
       },
       {
         id: "g7",
         url: "/images/gallery/gallery-7.jpg",
-        caption: "Atelier creativ: ceasul timpului",
+        caption: "Jocuri și activități de grup",
+      },
+      {
+        id: "g8",
+        url: "/images/gallery/gallery-8.jpg",
+        caption: "Momente de grup, prietenii se leagă la Magia Temelor",
+      },
+      {
+        id: "g9",
+        url: "/images/gallery/gallery-9.jpg",
+        caption: "Exerciții de creativitate și culoare",
+      },
+      {
+        id: "g10",
+        url: "/images/gallery/gallery-10.jpg",
+        caption: "Atelier de geografie, busola",
+      },
+      {
+        id: "g11",
+        url: "/images/gallery/gallery-11.jpg",
+        caption: "Robotică LEGO Education",
+      },
+      {
+        id: "g12",
+        url: "/images/gallery/gallery-12.jpg",
+        caption: "Pictură și joacă în echipă",
+      },
+      {
+        id: "g13",
+        url: "/images/gallery/gallery-13.jpg",
+        caption: "Măști creative, joacă și imaginație",
+      },
+      {
+        id: "g14",
+        url: "/images/gallery/gallery-14.jpg",
+        caption: "Măști colorate, zâmbete garantate",
+      },
+      {
+        id: "g15",
+        url: "/images/gallery/gallery-15.jpg",
+        caption: "Meșteșuguri din hârtie",
+      },
+      {
+        id: "g16",
+        url: "/images/gallery/gallery-16.jpg",
+        caption: "Teme și lucru de mână, alături de prietene",
+      },
+      {
+        id: "g17",
+        url: "/images/gallery/gallery-17.jpg",
+        caption: "Educație ecologică, reciclare",
+      },
+      {
+        id: "g18",
+        url: "/images/gallery/gallery-18.jpg",
+        caption: "Petrecere în comunitatea Magia Temelor",
+      },
+      {
+        id: "g19",
+        url: "/images/gallery/gallery-19.jpg",
+        caption: "Meșteșug educativ: ceasul cu minute",
+      },
+      {
+        id: "g20",
+        url: "/images/gallery/gallery-20.jpg",
+        caption: "Atelier de creație, ouă vopsite",
+      },
+      {
+        id: "g21",
+        url: "/images/gallery/gallery-21.jpg",
+        caption: "Inițiere în tehnoredactare",
+      },
+      {
+        id: "g22",
+        url: "/images/gallery/gallery-22.jpg",
+        caption: "Prietenii se leagă la joacă",
+      },
+      {
+        id: "g23",
+        url: "/images/gallery/gallery-23.jpg",
+        caption: "Distracție în grup",
+      },
+      {
+        id: "g24",
+        url: "/images/gallery/gallery-24.jpg",
+        caption: "Joacă liberă pe covorul cu traseu",
+      },
+      {
+        id: "g25",
+        url: "/images/gallery/gallery-25.jpg",
+        caption: "Spațiul nostru, pregătit pentru voi",
       },
     ],
   },
   testimonials: {
     title: "Ce spun părinții",
     description: "Încrederea părinților este cea mai importantă recomandare.",
-    items: [],
+    googleReviewUrl: "https://share.google/EVB6kaTW7ko0ItPUq",
+    items: [
+      {
+        id: "rev1",
+        name: "Theodora Vartanof",
+        role: "Părinte",
+        text: "Suntem foarte multumiti de acest after! Doamna Roxana este dedicata si se vede implicarea dansei in randul copiilor. Fetita noastra merge cu drag la acest after de cand s-a deschis. Recomand cu drag!",
+        rating: 5,
+      },
+      {
+        id: "rev2",
+        name: "Cristi P",
+        role: "Părinte",
+        text: "Un loc de excepție, totul nou, curat, iar doamna învățătoare este minunată. Copilul nostru a fost fascinat din prima zi aici, recomand cu drag!",
+        rating: 5,
+      },
+      {
+        id: "rev3",
+        name: "nicoleta gaciu",
+        role: "Părinte",
+        text: "Fetita mea este super incantata de activitatile efectuate la afterschool iar dna Roxana este foarte implicata.",
+        rating: 5,
+      },
+      {
+        id: "rev4",
+        name: "Alina Milea",
+        role: "Părinte",
+        text: "Recomand cu drag acest afterschool. Fetița este foarte încântată și nerăbdătoare să ajungă la after❤️",
+        rating: 5,
+      },
+    ],
   },
   contact: {
     title: "Hai să ne cunoaștem",

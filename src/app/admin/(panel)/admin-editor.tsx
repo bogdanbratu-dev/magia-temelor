@@ -521,6 +521,11 @@ export function AdminEditor({ initialContent }: { initialContent: SiteContent })
             value={content.testimonials.description}
             onChange={(v) => updateSection("testimonials", { description: v })}
           />
+          <TextField
+            label="Link review Google"
+            value={content.testimonials.googleReviewUrl}
+            onChange={(v) => updateSection("testimonials", { googleReviewUrl: v })}
+          />
           <div className="flex flex-col gap-3">
             {content.testimonials.items.map((item, index) => (
               <ListItemCard

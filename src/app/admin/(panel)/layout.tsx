@@ -18,6 +18,12 @@ export default function AdminPanelLayout({ children }: { children: React.ReactNo
           </div>
           <div className="flex items-center gap-3">
             <Link
+              href="/admin/statistici"
+              className="text-sm text-cream-100/80 hover:text-white underline underline-offset-2"
+            >
+              Statistici
+            </Link>
+            <Link
               href="/"
               target="_blank"
               className="text-sm text-cream-100/80 hover:text-white underline underline-offset-2"

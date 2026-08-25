@@ -10,6 +10,20 @@ const CONTENT_PATHNAME = "content/site-content.json";
 const LOCAL_CONTENT_PATH = path.join(process.cwd(), ".data", "site-content.json");
 
 const hasBlob = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+const hasGithub = () => Boolean(process.env.GITHUB_TOKEN && process.env.GITHUB_REPO);
+
+function githubContentsUrl(): string {
+  const repo = process.env.GITHUB_REPO;
+  return `https://api.github.com/repos/${repo}/contents/${CONTENT_PATHNAME}`;
+}
+
+function githubHeaders(accept: string): HeadersInit {
+  return {
+    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    Accept: accept,
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+}
 
 async function readLocalContent(): Promise<unknown | null> {
   try {
@@ -43,19 +57,73 @@ async function writeBlobContent(content: SiteContent): Promise<void> {
   });
 }
 
+async function readGithubContent(): Promise<unknown | null> {
+  const branch = process.env.GITHUB_BRANCH || "master";
+  const res = await fetch(`${githubContentsUrl()}?ref=${branch}`, {
+    headers: githubHeaders("application/vnd.github.raw+json"),
+    cache: "no-store",
+  });
+  if (!res.ok) return null;
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+async function writeGithubContent(content: SiteContent): Promise<void> {
+  const branch = process.env.GITHUB_BRANCH || "master";
+
+  let sha: string | undefined;
+  const existing = await fetch(`${githubContentsUrl()}?ref=${branch}`, {
+    headers: githubHeaders("application/vnd.github+json"),
+    cache: "no-store",
+  });
+  if (existing.ok) {
+    const data = (await existing.json()) as { sha?: string };
+    sha = data.sha;
+  }
+
+  const body = JSON.stringify(content, null, 2);
+  const res = await fetch(githubContentsUrl(), {
+    method: "PUT",
+    headers: {
+      ...githubHeaders("application/vnd.github+json"),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: "Actualizare conținut site din panoul de administrare",
+      content: Buffer.from(body, "utf-8").toString("base64"),
+      branch,
+      ...(sha ? { sha } : {}),
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Salvarea în GitHub a eșuat (${res.status})`);
+  }
+}
+
 export async function getSiteContent(): Promise<SiteContent> {
-  const saved = hasBlob() ? await readBlobContent() : await readLocalContent();
+  const saved = hasBlob()
+    ? await readBlobContent()
+    : hasGithub()
+      ? await readGithubContent()
+      : await readLocalContent();
   return mergeWithDefaults(DEFAULT_CONTENT, saved);
 }
 
 export async function saveSiteContent(content: SiteContent): Promise<void> {
   if (hasBlob()) {
     await writeBlobContent(content);
+  } else if (hasGithub()) {
+    await writeGithubContent(content);
   } else {
     await writeLocalContent(content);
   }
 }
 
 export function isStorageConfigured(): boolean {
-  return hasBlob() || process.env.NODE_ENV !== "production";
+  return hasBlob() || hasGithub() || process.env.NODE_ENV !== "production";
 }
